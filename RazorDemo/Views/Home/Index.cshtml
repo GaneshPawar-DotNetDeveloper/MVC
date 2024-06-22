@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>This is Razor Page</h1>
+        <input type="text" />
+        <button value="submit"></button>
+
+        @{ 
+            int i = 10;
+            int j = 12;
+            int k = i + j;
+            <p>
+                Result=@k
+            </p>}
+        @if (i == 10)
+            {
+               <p> value is ten.</p>
+            }
+else
+            {
+                <p>
+                    value is not ten
+                </p>
+            }
+    </div>
+</body>
+</html>
