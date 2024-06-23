@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MVCBasic",
+    "\\MVCBasic\\Views",
+    "\\MVCBasic\\Views\\Home"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\MVCBasic\\Views\\Home\\Welcome.cshtml",
   "PreviewInSolutionExplorer": false
 }
