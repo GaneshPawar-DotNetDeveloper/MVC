@@ -1,0 +1,131 @@
+#ViewBag in MVC
+
+#RoutCongig.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
+
+namespace MVCViewBag
+{
+    public class RouteConfig
+    {
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+        }
+    }
+}
+
+#HomeController.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace MVCViewBag.Controllers
+{
+    public class HomeController : Controller
+    {
+        // GET: Home
+        [HttpGet]
+        public ActionResult Index()
+        {
+            ViewBag.Name = "Suraj";
+            ViewBag.Brother = new string[] { "Suraj", "Ganesh", "Pruthviraj" };
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Index1()
+        {
+            return View();
+        }
+    }
+}
+
+#Index.cshtml
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+</head>
+<body>
+    <div> 
+        <h2>From : @ViewBag.Name</h2>
+        <input type="text" placeholder="Name" value="Button"/>
+        <input type="button"/>
+    </div>
+    <div>
+        <ul>
+            @foreach ( var s in ViewBag.Brother)
+            {
+                <li>@s</li>
+            }
+        </ul>
+    </div>
+    <div>
+        <a href="https://localhost:44307/Home/Index1">Go to Index1</a>
+    </div>
+</body>
+</html>
+
+# Index1.cshtml
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+</head>
+<body>
+    <div> 
+        @ViewBag.Name
+    </div>
+</body>
+</html>
+
+#Global.asax.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Routing;
+
+namespace MVCViewBag
+{
+    public class MvcApplication : System.Web.HttpApplication
+    {
+        protected void Application_Start()
+        {
+            AreaRegistration.RegisterAllAreas();
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+        }
+    }
+}
