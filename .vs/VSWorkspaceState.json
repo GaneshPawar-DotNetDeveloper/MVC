@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MVCBasic",
     "\\MVCBasic\\Views",
     "\\MVCBasic\\Views\\Home"
   ],
-  "SelectedNode": "\\MVCBasic\\Views\\Home\\Welcome.cshtml",
   "PreviewInSolutionExplorer": false
 }
