@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MVCBasic\\Views",
+    "\\MVCBasic\\Views\\Home"
   ],
-  "SelectedNode": "\\C:\\c#b22\\add project\\git",
   "PreviewInSolutionExplorer": false
 }
